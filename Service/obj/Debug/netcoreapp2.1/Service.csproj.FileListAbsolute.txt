@@ -1,0 +1,14 @@
+C:\Users\aafamuef\source\repos\HouseManager\Service\bin\Debug\netcoreapp2.1\Service.deps.json
+C:\Users\aafamuef\source\repos\HouseManager\Service\bin\Debug\netcoreapp2.1\Service.dll
+C:\Users\aafamuef\source\repos\HouseManager\Service\bin\Debug\netcoreapp2.1\Service.pdb
+C:\Users\aafamuef\source\repos\HouseManager\Service\bin\Debug\netcoreapp2.1\Data.dll
+C:\Users\aafamuef\source\repos\HouseManager\Service\bin\Debug\netcoreapp2.1\Settings.dll
+C:\Users\aafamuef\source\repos\HouseManager\Service\bin\Debug\netcoreapp2.1\Data.pdb
+C:\Users\aafamuef\source\repos\HouseManager\Service\bin\Debug\netcoreapp2.1\Settings.pdb
+C:\Users\aafamuef\source\repos\HouseManager\Service\obj\Debug\netcoreapp2.1\Service.csprojAssemblyReference.cache
+C:\Users\aafamuef\source\repos\HouseManager\Service\obj\Debug\netcoreapp2.1\Service.csproj.CoreCompileInputs.cache
+C:\Users\aafamuef\source\repos\HouseManager\Service\obj\Debug\netcoreapp2.1\Service.AssemblyInfoInputs.cache
+C:\Users\aafamuef\source\repos\HouseManager\Service\obj\Debug\netcoreapp2.1\Service.AssemblyInfo.cs
+C:\Users\aafamuef\source\repos\HouseManager\Service\obj\Debug\netcoreapp2.1\Service.csproj.CopyComplete
+C:\Users\aafamuef\source\repos\HouseManager\Service\obj\Debug\netcoreapp2.1\Service.dll
+C:\Users\aafamuef\source\repos\HouseManager\Service\obj\Debug\netcoreapp2.1\Service.pdb
