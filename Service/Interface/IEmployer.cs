@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Data.Model;
+﻿
+using Service.DTO_s;
 
 namespace Service.Interface
 {
-    public interface IEmployer : IBaseRepository<EmployerModel>
+    public interface IEmployer : IBaseRepository<EmployerDTO>
     {
     }
 }

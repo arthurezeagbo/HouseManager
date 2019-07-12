@@ -19,8 +19,7 @@ namespace Data.Model
 
         public string Gender { get; set; }
 
-        [DisplayFormat(DataFormatString = "{0:d}")]
-        public string DateOfBirth { get; set; }
+        public DateTime DateOfBirth { get; set; }
 
         public string Qualification { get; set; }
 
@@ -28,7 +27,7 @@ namespace Data.Model
 
         public string State { get; set; }
 
-        public int GuarantorId { get; set; }
+        public string GuarantorId { get; set; }
         public virtual GuarantorModel Guarantor { get; set; }
         public int? EmployerId { get; set; }
         public virtual EmployerModel Employer { get; set; }

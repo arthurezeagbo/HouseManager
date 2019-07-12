@@ -1,0 +1,8 @@
+C:\Users\aafamuef\source\repos\HouseManager\Settings\bin\Debug\netcoreapp2.1\Settings.deps.json
+C:\Users\aafamuef\source\repos\HouseManager\Settings\bin\Debug\netcoreapp2.1\Settings.dll
+C:\Users\aafamuef\source\repos\HouseManager\Settings\bin\Debug\netcoreapp2.1\Settings.pdb
+C:\Users\aafamuef\source\repos\HouseManager\Settings\obj\Debug\netcoreapp2.1\Settings.csproj.CoreCompileInputs.cache
+C:\Users\aafamuef\source\repos\HouseManager\Settings\obj\Debug\netcoreapp2.1\Settings.AssemblyInfoInputs.cache
+C:\Users\aafamuef\source\repos\HouseManager\Settings\obj\Debug\netcoreapp2.1\Settings.AssemblyInfo.cs
+C:\Users\aafamuef\source\repos\HouseManager\Settings\obj\Debug\netcoreapp2.1\Settings.dll
+C:\Users\aafamuef\source\repos\HouseManager\Settings\obj\Debug\netcoreapp2.1\Settings.pdb

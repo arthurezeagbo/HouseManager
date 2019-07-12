@@ -1,8 +1,11 @@
 ﻿using Data.Model;
+using Microsoft.AspNetCore;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Settings.Configs;
+using Settings.Constants;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -11,30 +14,26 @@ namespace Data
 {
     class Program
     {
-        //static void Main(string[] args)
-        //{
-        //    var services = new ServiceCollection();
+        public static void Main(string[] args)
+        {
+            IWebHost host = CreateWebHostBuilder(args).Build();
 
-        //    var connectionString = DbConnection.CONNECTION_STRING;
+            //using (var scope = host.Services.CreateScope())
+            //{
+            //    var service = scope.ServiceProvider;
 
-        //    services.AddDbContext<ApplicationDbContext>(options =>
-        //       options.UseSqlServer(connectionString));
+            //    var context = service.GetRequiredService<ApplicationDbContext>();
+            //    var userManager = service.GetRequiredService<UserManager<UserProfileModel>>();
+            //    var roleManager = service.GetRequiredService<RoleManager<ApplicationRoleModel>>();
 
-        //    services.AddIdentity<UserProfileModel, IdentityRole>()
-        //        .AddEntityFrameworkStores<ApplicationDbContext>()
-        //        .AddDefaultTokenProviders();
+            //    SeedData.SetUpDatabaseAsync(context, userManager, roleManager).GetAwaiter().GetResult();
+            //}
 
-        //    using (var serviceProvider = services.BuildServiceProvider())
-        //    {
-        //        using (var scope = serviceProvider.GetRequiredService<IServiceScopeFactory>().CreateScope())
-        //        {
-        //            var context = scope.ServiceProvider.GetService<ApplicationDbContext>();
-        //            context.Database.Migrate();
+            host.Run();
+        }
 
-
-        //            var result = SeedData.SetUpDatabaseAsync(serviceProvider);
-        //        }
-        //    }
-        //}
+        public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
+            WebHost.CreateDefaultBuilder(args)
+                .UseStartup<Startup>();
     }
 }

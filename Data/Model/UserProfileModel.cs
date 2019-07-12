@@ -19,6 +19,6 @@ namespace Data.Model
         public DateTime DateCreated { get; set; }
         public DateTime DateUpdated { get; set; }
         public bool IsActive { get; set; }
-
+        public bool IsMarkedAsDeleted { get; set; } = false;
     }
 }

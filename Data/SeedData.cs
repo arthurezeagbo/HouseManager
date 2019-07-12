@@ -12,81 +12,83 @@ namespace Data
 {
     public class SeedData
     {
-        public static async Task SetUpDatabaseAsync(IServiceProvider serviceProvider)
+      
+        public static async Task SetUpDatabaseAsync(ApplicationDbContext _context, UserManager<UserProfileModel> _userManager, RoleManager<ApplicationRoleModel> _roleManager)
         {
-            var roleManager = serviceProvider.GetRequiredService<RoleManager<IdentityRole>>();
-            var userManager = serviceProvider.GetRequiredService<UserManager<UserProfileModel>>();
-            var context = serviceProvider.GetRequiredService<ApplicationDbContext>();
-
-            if (!await context.Roles.AnyAsync())
+            try
             {
-                await context.Roles.AddAsync(new ApplicationRoleModel(ApplicationRoles.ADMIN));
-                await context.Roles.AddAsync(new ApplicationRoleModel(ApplicationRoles.SUPER_ADMIN));
-                await context.Roles.AddAsync(new ApplicationRoleModel(ApplicationRoles.HELPER));
-                await context.Roles.AddAsync(new ApplicationRoleModel(ApplicationRoles.GUARANTOR));
-                await context.Roles.AddAsync(new ApplicationRoleModel(ApplicationRoles.EMPLOYER));
-
-                await context.SaveChangesAsync();
-            }
-
-            if(!await context.Users.AnyAsync())
-            {
-                if (!await roleManager.RoleExistsAsync(ApplicationRoles.SUPER_ADMIN))
+                if (!await _context.Roles.AnyAsync())
                 {
-                    UserProfileModel superAdminUser = new UserProfileModel
-                    {
-                        Surname = "Ezeagbo",
-                        FirstName = "Arthur",
-                        LastName = "Afamuefuna",
-                        Email = "arthurezeagbo@gmail.com",
-                        UserName = "arthurezeagbo@gmail.com",
-                        IsActive = true,
-                    };
+                    await _context.Roles.AddAsync(new ApplicationRoleModel(ApplicationRoles.ADMIN));
+                    await _context.Roles.AddAsync(new ApplicationRoleModel(ApplicationRoles.SUPER_ADMIN));
+                    await _context.Roles.AddAsync(new ApplicationRoleModel(ApplicationRoles.HELPER));
+                    await _context.Roles.AddAsync(new ApplicationRoleModel(ApplicationRoles.GUARANTOR));
+                    await _context.Roles.AddAsync(new ApplicationRoleModel(ApplicationRoles.EMPLOYER));
 
-                    IdentityResult result = await userManager.CreateAsync(superAdminUser, "password");
-
-                    if (result.Succeeded)
-                    {
-                        Console.WriteLine("Super admin user created");
-
-                        IdentityResult addUserToRole = await userManager.AddToRoleAsync(superAdminUser, ApplicationRoles.SUPER_ADMIN);
-
-                        if (addUserToRole.Succeeded)
-                        {
-                            Console.WriteLine("Assigned user super admin role");
-                        }
-                    }
+                    await _context.SaveChangesAsync();
                 }
 
-                if (!await roleManager.RoleExistsAsync(ApplicationRoles.ADMIN))
+                if (!await _context.Users.AnyAsync())
                 {
-                    UserProfileModel adminUser = new UserProfileModel
+                    if (await _roleManager.RoleExistsAsync(ApplicationRoles.SUPER_ADMIN))
                     {
-                        Surname = "Ezeagbo",
-                        FirstName = "Arthur",
-                        LastName = "Afamuefuna",
-                        Email = "arthur.afamuefuna.ext@lafargeholcim.com",
-                        UserName = "arthur.afamuefuna.ext@lafargeholcim.com",
-                        IsActive = true,
-                    };
-
-                    IdentityResult result = await userManager.CreateAsync(adminUser, "password");
-
-                    if (result.Succeeded)
-                    {
-                        Console.WriteLine("Admin user created");
-
-                        IdentityResult addUserToRole = await userManager.AddToRoleAsync(adminUser, ApplicationRoles.ADMIN);
-
-                        if (addUserToRole.Succeeded)
+                        UserProfileModel superAdminUser = new UserProfileModel
                         {
-                            Console.WriteLine("Assigned user admin role");
+                            Surname = "Ezeagbo",
+                            FirstName = "Arthur",
+                            LastName = "Afamuefuna",
+                            Email = "arthurezeagbo@gmail.com",
+                            UserName = "arthurezeagbo@gmail.com",
+                            IsActive = true,
+                        };
+
+                        IdentityResult result = await _userManager.CreateAsync(superAdminUser, "Password123");
+
+                        if (result.Succeeded)
+                        {
+                            Console.WriteLine("Super admin user created");
+
+                            IdentityResult addUserToRole = await _userManager.AddToRoleAsync(superAdminUser, ApplicationRoles.SUPER_ADMIN);
+
+                            if (addUserToRole.Succeeded)
+                            {
+                                Console.WriteLine("Assigned user super admin role");
+                            }
                         }
                     }
-                }
 
-                await context.SaveChangesAsync();
+                    if (await _roleManager.RoleExistsAsync(ApplicationRoles.ADMIN))
+                    {
+                        UserProfileModel adminUser = new UserProfileModel
+                        {
+                            Surname = "Ezeagbo",
+                            FirstName = "Arthur",
+                            LastName = "Afamuefuna",
+                            Email = "arthur.afamuefuna.ext@lafargeholcim.com",
+                            UserName = "arthur.afamuefuna.ext@lafargeholcim.com",
+                            IsActive = true,
+                        };
+
+                        IdentityResult result = await _userManager.CreateAsync(adminUser, "Password123");
+
+                        if (result.Succeeded)
+                        {
+                            Console.WriteLine("Admin user created");
+
+                            IdentityResult addUserToRole = await _userManager.AddToRoleAsync(adminUser, ApplicationRoles.ADMIN);
+
+                            if (addUserToRole.Succeeded)
+                            {
+                                Console.WriteLine("Assigned user admin role");
+                            }
+                        }
+                    }
+
+                    await _context.SaveChangesAsync();
+                }
             }
+            catch (Exception ex) { }
+            
         }
     }
 }

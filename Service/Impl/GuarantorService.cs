@@ -1,6 +1,7 @@
 ﻿using Data;
 using Data.Model;
 using Microsoft.EntityFrameworkCore;
+using Service.DTO_s;
 using Service.Interface;
 using System;
 using System.Collections.Generic;
@@ -19,40 +20,77 @@ namespace Service.Impl
             _context = context;
         }
        
-        public async Task<bool> AddAsync(GuarantorModel user)
-        {
-            try
-            {
-                _context.Guarantor.Add(user);
-
-                await _context.SaveChangesAsync();
-                return Task.CompletedTask.IsCompleted;
-            }
-            catch (Exception ex) { }
-
-            return Task.CompletedTask.IsCanceled;
-        }
-
-        public async Task<IEnumerable<GuarantorModel>> GetAllAsync()
+        public async Task<IEnumerable<GuarantorDTO>> GetAllAsync()
         {
             if (!await _context.Guarantor.AnyAsync()) return null;
 
-            return await _context.Guarantor.ToListAsync();
+            List<GuarantorModel> result = await _context.Guarantor.ToListAsync();
+            List<GuarantorDTO> guarantors = null;
+            GuarantorDTO output = null;
+
+            foreach (GuarantorModel g in result)
+            {
+                output = new GuarantorDTO {
+                    Address = g.Address,
+                    Email = g.Email,
+                    FirstName = g.FirstName,
+                    Gender = g.Gender,
+                    LastName = g.LastName,
+                    PhoneNumber1 = g.PhoneNumber1,
+                    PhoneNumber2 = g.PhoneNumber2,
+                    State = g.State,
+                    Surname = g.Surname,
+                    Id = g.Id,
+                    DateCreated = g.DateCreated
+                };
+                guarantors.Add(output);
+            }
+
+            return guarantors;
         }
 
-        public async Task<GuarantorModel> GetByIdAsync(int id)
+        public async Task<GuarantorDTO> GetByIdAsync(int id)
         {
             if (string.IsNullOrEmpty(id.ToString())) return null;
 
-            return await _context.Guarantor.FirstOrDefaultAsync(c => c.Id == id);
+            GuarantorModel user = await _context.Guarantor.FirstOrDefaultAsync(c => c.Id == id);
+
+            GuarantorDTO result = new GuarantorDTO {
+                DateCreated = user.DateCreated,
+                Id = user.Id,
+                Address = user.Address,
+                 Email = user.Email,
+                 FirstName = user.FirstName,
+                 Gender = user.Gender,
+                 LastName = user.LastName,
+                 PhoneNumber1 = user.PhoneNumber1,
+                 PhoneNumber2 = user.PhoneNumber2,
+                 State = user.State,
+                 Surname = user.Surname
+            };
+
+            return result ;
         }
 
-        public async Task<bool> UpdateAsync(GuarantorModel user)
+        public async Task<bool> UpdateAsync(GuarantorDTO user)
         {
             try
             {
-                _context.Guarantor.Attach(user);
-                _context.Entry(user).State = EntityState.Modified;
+                GuarantorModel guarantor = new GuarantorModel()
+                {
+                    Address = user.Address,
+                    Email = user.Email,
+                    Gender = user.Gender,
+                    MarkAsDeleted = true,
+                    PhoneNumber1 = user.PhoneNumber1,
+                    PhoneNumber2 = user.PhoneNumber2,
+                    State = user.State,
+                    Surname = user.Surname,
+                    LastName = user.LastName,
+                };
+
+                _context.Guarantor.Attach(guarantor);
+                _context.Entry(guarantor).State = EntityState.Modified;
 
                 await _context.SaveChangesAsync();
                 return Task.CompletedTask.IsCompleted;

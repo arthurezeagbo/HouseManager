@@ -8,11 +8,8 @@ namespace Service.Interface
 {
     public interface IBaseRepository<T> where T : class
     {
-        Task<bool> AddAsync(T user);
         Task<IEnumerable<T>> GetAllAsync();
         Task<T> GetByIdAsync(int id);
         Task<bool> UpdateAsync(T user);
-        
-
     }
 }

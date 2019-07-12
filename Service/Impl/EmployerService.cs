@@ -1,6 +1,7 @@
 ﻿using Data;
 using Data.Model;
 using Microsoft.EntityFrameworkCore;
+using Service.DTO_s;
 using Service.Interface;
 using System;
 using System.Collections.Generic;
@@ -17,40 +18,82 @@ namespace Service.Impl
         {
             _context = context;
         }
-        public async Task<bool> AddAsync(EmployerModel user)
+       
+        public async Task<IEnumerable<EmployerDTO>> GetAllAsync()
         {
-            try
+            if (!await _context.Guarantor.AnyAsync()) return null;
+
+            List<EmployerModel> result = await _context.Employer.ToListAsync();
+            List<EmployerDTO> employers = null;
+            EmployerDTO output = null;
+
+            foreach (EmployerModel g in result)
             {
-                _context.Employer.Add(user);
-
-                await _context.SaveChangesAsync();
-                return Task.CompletedTask.IsCompleted;
+                output = new EmployerDTO
+                {
+                    Address = g.Address,
+                    Email = g.Email,
+                    FirstName = g.FirstName,
+                    Gender = g.Gender,
+                    LastName = g.LastName,
+                    PhoneNumber1 = g.PhoneNumber1,
+                    PhoneNumber2 = g.PhoneNumber2,
+                    State = g.State,
+                    Surname = g.Surname,
+                    Id = g.Id,
+                    DateCreated = g.DateCreated,
+                    IsActive = g.IsActive
+                };
+                employers.Add(output);
             }
-            catch (Exception ex) { }
 
-            return Task.CompletedTask.IsCanceled;
+            return employers;
         }
 
-        public async Task<IEnumerable<EmployerModel>> GetAllAsync()
-        {
-            if (!await _context.Employer.AnyAsync()) return null;
-
-            return await _context.Employer.ToListAsync();
-        }
-
-        public async Task<EmployerModel> GetByIdAsync(int id)
+        public async Task<EmployerDTO> GetByIdAsync(int id)
         {
             if (string.IsNullOrEmpty(id.ToString())) return null;
 
-            return await _context.Employer.FirstOrDefaultAsync(c => c.Id == id);
+            EmployerModel user = await _context.Employer.FirstOrDefaultAsync(c => c.Id == id);
+
+            EmployerDTO result = new EmployerDTO
+            {
+                DateCreated = user.DateCreated,
+                Id = user.Id,
+                Address = user.Address,
+                Email = user.Email,
+                FirstName = user.FirstName,
+                Gender = user.Gender,
+                LastName = user.LastName,
+                PhoneNumber1 = user.PhoneNumber1,
+                PhoneNumber2 = user.PhoneNumber2,
+                State = user.State,
+                Surname = user.Surname,
+                IsActive = user.IsActive
+            };
+
+            return result;
         }
 
-        public async Task<bool> UpdateAsync(EmployerModel user)
+        public async Task<bool> UpdateAsync(EmployerDTO user)
         {
             try
             {
-                _context.Employer.Attach(user);
-                _context.Entry(user).State = EntityState.Modified;
+                EmployerModel employer = new EmployerModel()
+                {
+                    Address = user.Address,
+                    Email = user.Email,
+                    Gender = user.Gender,
+                    MarkAsDeleted = true,
+                    PhoneNumber1 = user.PhoneNumber1,
+                    PhoneNumber2 = user.PhoneNumber2,
+                    State = user.State,
+                    Surname = user.Surname,
+                    LastName = user.LastName
+                };
+
+                _context.Employer.Attach(employer);
+                _context.Entry(employer).State = EntityState.Modified;
 
                 await _context.SaveChangesAsync();
                 return Task.CompletedTask.IsCompleted;
