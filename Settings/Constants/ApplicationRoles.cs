@@ -13,12 +13,5 @@ namespace Settings.Constants
         public const string SUPER_ADMIN = "SUPER_ADMIN";
 
     }
-
-    public class UserType
-    {
-        public const string GUARANTOR = "GUARANTOR";
-        public const string EMPLOYER = "EMPLOYER";
-    }
-
     
 }

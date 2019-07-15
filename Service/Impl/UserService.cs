@@ -3,6 +3,7 @@ using Data.Model;
 using Microsoft.AspNetCore.Identity;
 using Service.DTO_s;
 using Service.Interface;
+using Settings.Constants;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -91,14 +92,53 @@ namespace Service.Impl
                 PhoneNumber = model.PhoneNumber,
                 IsActive = true
             };
-
-            if (!await _roleManager.RoleExistsAsync(model.UserType.ToString()))
+            
+            if (!await _roleManager.RoleExistsAsync(model.UserType))
                 return "Invalid role";
 
-            var result = await _userManager.CreateAsync(user);
+            var result = await _userManager.CreateAsync(user, model.Password);
 
             if (result.Succeeded)
             {
+                if (model.UserType.ToString().Equals(ApplicationRoles.GUARANTOR))
+                {
+                    GuarantorModel guarantor = new GuarantorModel
+                    {
+                        Address = model.Address,
+                        Email = model.Email,
+                        FirstName = model.FirstName,
+                        Gender = model.Gender,
+                        LastName = model.LastName,
+                        PhoneNumber1 = model.PhoneNumber,
+                        State = model.State,
+                        Surname = model.Surname,
+                        User = user,
+                        UserId = user.Id,
+                    };
+
+                    _context.Guarantor.Add(guarantor);
+                    await _context.SaveChangesAsync();
+                }
+                else if (model.UserType.ToString().Equals(ApplicationRoles.EMPLOYER))
+                {
+                    EmployerModel employer = new EmployerModel
+                    {
+                        Address = model.Address,
+                        Email = model.Email,
+                        FirstName = model.FirstName,
+                        Gender = model.Gender,
+                        LastName = model.LastName,
+                        PhoneNumber1 = model.PhoneNumber,
+                        State = model.State,
+                        Surname = model.Surname,
+                        User = user,
+                        UserId = user.Id,
+                    };
+
+                    _context.Employer.Add(employer);
+                    await _context.SaveChangesAsync();
+                }
+                
                 var output = await _userManager.AddToRoleAsync(user, model.UserType.ToString());
 
                 if (output.Succeeded)

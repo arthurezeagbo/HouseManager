@@ -63,11 +63,7 @@ namespace Data.Migrations
 
                     b.Property<int?>("GuarantorModelId");
 
-                    b.Property<bool>("IsActive");
-
                     b.Property<string>("LastName");
-
-                    b.Property<bool>("MarkAsDeleted");
 
                     b.Property<string>("PhoneNumber1");
 
@@ -77,9 +73,13 @@ namespace Data.Migrations
 
                     b.Property<string>("Surname");
 
+                    b.Property<string>("UserId");
+
                     b.HasKey("Id");
 
                     b.HasIndex("GuarantorModelId");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("Employer");
                 });
@@ -104,8 +104,6 @@ namespace Data.Migrations
 
                     b.Property<string>("LastName");
 
-                    b.Property<bool>("MarkAsDeleted");
-
                     b.Property<string>("PhoneNumber1");
 
                     b.Property<string>("PhoneNumber2");
@@ -114,7 +112,11 @@ namespace Data.Migrations
 
                     b.Property<string>("Surname");
 
+                    b.Property<string>("UserId");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("Guarantor");
                 });
@@ -142,8 +144,6 @@ namespace Data.Migrations
                     b.Property<int?>("GuarantorId1");
 
                     b.Property<string>("LastName");
-
-                    b.Property<bool>("MarkAsDeleted");
 
                     b.Property<string>("Qualification");
 
@@ -318,6 +318,17 @@ namespace Data.Migrations
                     b.HasOne("Data.Model.GuarantorModel")
                         .WithMany("Employers")
                         .HasForeignKey("GuarantorModelId");
+
+                    b.HasOne("Data.Model.UserProfileModel", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId");
+                });
+
+            modelBuilder.Entity("Data.Model.GuarantorModel", b =>
+                {
+                    b.HasOne("Data.Model.UserProfileModel", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId");
                 });
 
             modelBuilder.Entity("Data.Model.HelperModel", b =>

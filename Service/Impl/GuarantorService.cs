@@ -81,7 +81,6 @@ namespace Service.Impl
                     Address = user.Address,
                     Email = user.Email,
                     Gender = user.Gender,
-                    MarkAsDeleted = true,
                     PhoneNumber1 = user.PhoneNumber1,
                     PhoneNumber2 = user.PhoneNumber2,
                     State = user.State,

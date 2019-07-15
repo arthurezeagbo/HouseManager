@@ -31,7 +31,6 @@ namespace Service.Impl
                     LastName = user.LastName,
                     Surname = user.Surname,
                     Gender = user.Gender,
-                    MarkAsDeleted = false,
                     Qualification = user.Qualification,
                     GuarantorId = user.GuarantorId,
                     Religion = user.Religion,

@@ -26,8 +26,10 @@ namespace Data.Model
         public string State { get; set; }
 
         public string Address { get; set; }
-
+        public string UserId { get; set; }
+        public UserProfileModel User { get; set; }
         public virtual IEnumerable<HelperModel> Helpers { get; set; }
         public virtual IEnumerable<EmployerModel> Employers { get; set; }
+
     }
 }

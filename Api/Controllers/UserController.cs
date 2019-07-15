@@ -26,22 +26,18 @@ namespace Api.Controllers
             _signInManager = signInManager;
         }
 
-        [Route("Index")]
-        public IActionResult Index()
-        {
-            return View();
-        }
-
+        [Route("CreateUser")]
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<JsonResult> CreateUser(CreateUserDTO model)
+        public async Task<JsonResult> CreateUser([FromBody] CreateUserDTO model)
         {
             if (ModelState.IsValid)
             {
-                if (!model.PhoneNumber.Equals(model.ConfirmPassword))
+                if (!model.Password.Equals(model.ConfirmPassword))
                     return Json("Password mismatch");
-                
-                
+
+                var result = await _user.CreateUserAsync(model);
+
+                return Json(result);
             }
 
             return Json("Failed");

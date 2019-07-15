@@ -25,7 +25,7 @@ namespace Service.DTO_s
 
         public string Address { get; set; }
 
-        public UserType UserType { get; set; }
+        public string UserType { get; set; }
 
     }
 

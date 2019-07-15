@@ -15,6 +15,5 @@ namespace Data
         public int Id { get; set; }
         public DateTime DateCreated { get; set; }
         public DateTime DateUpdated { get; set; }
-        public bool MarkAsDeleted { get; set; } = false;
     }
 }

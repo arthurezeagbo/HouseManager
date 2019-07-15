@@ -42,7 +42,6 @@ namespace Service.Impl
                     Surname = g.Surname,
                     Id = g.Id,
                     DateCreated = g.DateCreated,
-                    IsActive = g.IsActive
                 };
                 employers.Add(output);
             }
@@ -69,7 +68,6 @@ namespace Service.Impl
                 PhoneNumber2 = user.PhoneNumber2,
                 State = user.State,
                 Surname = user.Surname,
-                IsActive = user.IsActive
             };
 
             return result;
@@ -84,7 +82,6 @@ namespace Service.Impl
                     Address = user.Address,
                     Email = user.Email,
                     Gender = user.Gender,
-                    MarkAsDeleted = true,
                     PhoneNumber1 = user.PhoneNumber1,
                     PhoneNumber2 = user.PhoneNumber2,
                     State = user.State,

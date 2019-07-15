@@ -24,9 +24,10 @@ namespace Data.Model
 
         public string Address { get; set; }
 
-        public bool IsActive { get; set; }
+        public string UserId { get; set; }
+        public UserProfileModel User { get; set; }
 
         public virtual IEnumerable<HelperModel> Helpers { get; set; }
-
+        
     }
 }
