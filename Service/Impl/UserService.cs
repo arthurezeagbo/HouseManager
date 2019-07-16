@@ -1,6 +1,8 @@
 ﻿using Data;
 using Data.Model;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using Service.DTO_s;
 using Service.Interface;
 using Settings.Constants;
@@ -16,12 +18,14 @@ namespace Service.Impl
         protected readonly ApplicationDbContext _context;
         protected readonly UserManager<UserProfileModel> _userManager;
         protected readonly RoleManager<ApplicationRoleModel> _roleManager;
+        private readonly ILogger<UserService> _logger;
 
-        public UserService(ApplicationDbContext context, UserManager<UserProfileModel> userManager, RoleManager<ApplicationRoleModel> roleManager)
+        public UserService(ApplicationDbContext context, UserManager<UserProfileModel> userManager, RoleManager<ApplicationRoleModel> roleManager, ILogger<UserService> logger)
         {
             _context = context;
             _userManager = userManager;
             _roleManager = roleManager;
+            _logger = logger;
         }
 
         public async Task<bool> ActivateUserAsync(string userId)
@@ -71,14 +75,54 @@ namespace Service.Impl
             throw new NotImplementedException();
         }
 
-        public Task<UpdateUserDTO> UpdateUserAsync(string userId)
+        public async Task<UpdateUserDTO> UpdateUserAsync(string userId)
         {
-            throw new NotImplementedException();
+            UserProfileModel user =  _userManager.FindByIdAsync(userId).GetAwaiter().GetResult();
+
+            if (user == null) return null;
+
+            UpdateUserDTO userDetails = new UpdateUserDTO
+            {
+                UserId = user.Id,
+                FirstName = user.FirstName,
+                LastName = user.LastName,
+                Surname = user.Surname,
+                PhoneNumber = user.PhoneNumber,
+                Address = user.Address,
+                State = user.State
+            };
+
+            return  userDetails;
         }
 
-        public Task<bool> UpdateUserAsync(UpdateUserDTO user)
+        public async Task<bool> UpdateUserAsync(UpdateUserDTO data)
         {
-            throw new NotImplementedException();
+            var user = _userManager.FindByIdAsync(data.UserId).Result;
+
+            if (user == null) return false;
+
+            user.FirstName = data.FirstName;
+            user.LastName = data.FirstName;
+            user.Surname = data.Surname;
+            user.State = data.State;
+
+            user.Address = data.Address;
+            user.PhoneNumber = data.PhoneNumber;
+            
+            try
+            {
+                _context.Update(user);
+               
+                await _context.SaveChangesAsync();
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogCritical(ex.Message, this.GetType().Name);
+            }
+
+            return false;
         }
 
         public async Task<string> CreateUserAsync(CreateUserDTO model)
@@ -90,7 +134,9 @@ namespace Service.Impl
                 FirstName = model.FirstName,
                 LastName = model.LastName,
                 PhoneNumber = model.PhoneNumber,
-                IsActive = true
+                IsActive = true,
+                Surname = model.Surname,
+                Address = model.Address,
             };
             
             if (!await _roleManager.RoleExistsAsync(model.UserType))

@@ -43,9 +43,26 @@ namespace Api.Controllers
             return Json("Failed");
         }
 
+        [Route("UpdateUser/{userId}")]
+        [HttpGet]
+        public async Task<JsonResult> UpdateUser(string userId)
+        {
+            if (userId == null) return null;
+
+            return Json(await _user.UpdateUserAsync(userId));
+        }
+
+        [Route("UpdateUser")]
+        [HttpPost]
+        public async Task<JsonResult> UpdateUser([FromBody] UpdateUserDTO userDetails)
+        {
+            if (userDetails == null) return null;
+
+            return Json(await _user.UpdateUserAsync(userDetails));
+        }
+
         [Route("DeactivateUser")]
         [HttpPost]
-        //[ValidateAntiForgeryToken]
         public async Task<JsonResult> DeactivateUser(string userId)
         {
             if (string.IsNullOrEmpty(userId)) return Json("Invalid user id");
@@ -76,9 +93,7 @@ namespace Api.Controllers
             var result = await _signInManager.PasswordSignInAsync(model.Email, model.Password,model.RememberMe, false);
 
             if (result.Succeeded)
-            {
                 return "User logged in";
-            }
 
             return "Login failed";
         }

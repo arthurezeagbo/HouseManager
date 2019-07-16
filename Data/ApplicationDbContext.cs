@@ -55,6 +55,7 @@ namespace Data
         public DbSet<HelperModel> Helper { get; set; }
         public DbSet<EmployerModel> Employer { get; set; }
         public DbSet<GuarantorModel> Guarantor { get; set; }
+        public DbSet<MessageModel> Message { get; set; }
 
     }
 }
