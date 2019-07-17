@@ -1,9 +1,11 @@
 ﻿using Data;
 using Data.Model;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Service.Interface;
+using Settings.Constants;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +14,7 @@ using System.Threading.Tasks;
 namespace Api.Controllers
 {
     [DisableCors]
+    [Authorize(Roles = ""+ApplicationRoles.SUPER_ADMIN+","+ApplicationRoles.ADMIN+"")]
     public class AdminController : BaseController
     {
         public AdminController(ApplicationDbContext context, UserManager<UserProfileModel> userManager, RoleManager<ApplicationRoleModel> roleManager, IHelper helper, IGuarantor guarantor, IEmployer employer)
@@ -62,6 +65,16 @@ namespace Api.Controllers
             if (!string.IsNullOrEmpty(id.ToString()) && id > 0)
                 return Json(await _guarantor.GetByIdAsync(id));
 
+            return null;
+        }
+
+        public async Task<JsonResult> DisableUser(string userId)
+        {
+            return null;
+        }
+
+        public async Task<JsonResult> EnableUser(string userId)
+        {
             return null;
         }
     }

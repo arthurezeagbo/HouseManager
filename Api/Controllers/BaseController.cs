@@ -19,6 +19,7 @@ namespace Api.Controllers
         protected readonly IHelper _helper;
         protected readonly IGuarantor _guarantor;
         protected readonly IEmployer _employer;
+        protected readonly IUser _user;
         
         public BaseController()
         {
@@ -38,6 +39,11 @@ namespace Api.Controllers
         public BaseController(IGuarantor guarantor )
         {
             _guarantor = guarantor;
+        }
+
+        public BaseController(IUser user)
+        {
+            _user = user;
         }
 
         public BaseController(ApplicationDbContext context, UserManager<UserProfileModel> userManager, RoleManager<ApplicationRoleModel> roleManager)

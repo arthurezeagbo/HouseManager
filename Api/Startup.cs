@@ -72,6 +72,8 @@ namespace Api
             services.AddTransient<IGuarantor, GuarantorService>();
             services.AddTransient<IHelper, HelperService>();
             services.AddTransient<IUser, UserService>();
+            services.AddTransient<IAdmin, AdminService>();
+            services.AddTransient<ISuperAdmin, SuperAdminService>();
 
 
             services.AddMvc();//.SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
