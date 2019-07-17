@@ -31,15 +31,20 @@ namespace Service.Impl
                     LastName = user.LastName,
                     Surname = user.Surname,
                     Gender = user.Gender,
+
                     Qualification = user.Qualification,
                     GuarantorId = user.GuarantorId,
                     Religion = user.Religion,
                     State = user.State,
+
                     DateOfBirth = user.DateOfBirth
+
                 };
+
                 _context.Helper.Add(helper);
 
                 await _context.SaveChangesAsync();
+
                 return Task.CompletedTask.IsCompleted;
             }
             catch (Exception ex) { }
@@ -52,24 +57,31 @@ namespace Service.Impl
             var helpers = await _context.Helper.AnyAsync() ? _context.Helper.ToListAsync() : null;
 
             List<HelperModel> all = helpers.GetAwaiter().GetResult();
+
             List<HelperDTO> helpersDTO = null;
+
             HelperDTO helper = null;
 
             foreach(HelperModel user in all)
             {
                 helper = new HelperDTO {
+
                     DateCreated = user.DateCreated,
                     DateOfBirth = user.DateOfBirth,
                     FirstName = user.FirstName,
                     Gender = user.Gender,
+
                     Id = user.Id,
                     LastName = user.LastName,
                     Qualification = user.Qualification,
                     Religion = user.Religion,
+
                     State = user.State,
                     Surname = user.Surname,
                     Guarantor = string.Concat(user.Guarantor.Surname," ",user.Guarantor.FirstName," ",user.Guarantor.LastName)
+
                 };
+
                 helpersDTO.Add(helper);
             }
 
@@ -88,13 +100,16 @@ namespace Service.Impl
                 Id = user.Id,
                 Religion = user.Religion,
                 Qualification = user.Qualification,
+
                 Guarantor = string.Concat(user.Guarantor.Surname, " ", user.Guarantor.FirstName, " ", user.Guarantor.LastName),
                 FirstName = user.FirstName,
                 Gender = user.Gender,
                 LastName = user.LastName,
+
                 DateOfBirth = user.DateOfBirth,
                 State = user.State,
-                Surname = user.Surname             
+                Surname = user.Surname  
+                
             };
 
             return result;
@@ -110,6 +125,7 @@ namespace Service.Impl
                     Qualification = user.Qualification,
                     FirstName = user.FirstName,
                     Gender = user.Gender,
+
                     LastName = user.LastName,
                     DateOfBirth = user.DateOfBirth,
                     State = user.State,
@@ -117,9 +133,11 @@ namespace Service.Impl
                 };
 
                 _context.Helper.Attach(helper);
+
                 _context.Entry(helper).State = EntityState.Modified;
 
                 await _context.SaveChangesAsync();
+
                 return Task.CompletedTask.IsCompleted;
             }
             catch (Exception ex) { }

@@ -32,6 +32,43 @@ namespace Service.Impl
         {
             UserProfileModel user = await _userManager.FindByIdAsync(userId);
 
+            if (_userManager.IsInRoleAsync(user, ApplicationRoles.GUARANTOR).Result || _userManager.IsInRoleAsync(user, ApplicationRoles.EMPLOYER).Result)
+            {
+                if (user.IsActive) return true;
+
+                user.IsActive = true;
+
+                if (_userManager.UpdateAsync(user).GetAwaiter().GetResult().Succeeded)
+                    return true;
+            }
+
+            return false;
+        }
+
+        
+        public async Task<bool> DisableUserAsync(string userId)
+        {
+            UserProfileModel user = await _userManager.FindByIdAsync(userId);
+
+            if (user == null) return false;
+
+            if(_userManager.IsInRoleAsync(user, ApplicationRoles.GUARANTOR).Result || _userManager.IsInRoleAsync(user, ApplicationRoles.EMPLOYER).Result)
+            {
+                if (!user.IsActive) return true;
+
+                user.IsActive = false;
+
+                if (_userManager.UpdateAsync(user).GetAwaiter().GetResult().Succeeded)
+                    return true;
+            }
+
+            return false;
+        }
+
+        public async Task<bool> ActivateAnyUserAsync(string userId)
+        {
+            UserProfileModel user = await _userManager.FindByIdAsync(userId);
+
             if (user.IsActive) return true;
 
             user.IsActive = true;
@@ -42,9 +79,11 @@ namespace Service.Impl
             return false;
         }
 
-        public async Task<bool> DisableUserAsync(string userId)
+        public async Task<bool> DisableAnyUserAsync(string userId)
         {
             UserProfileModel user = await _userManager.FindByIdAsync(userId);
+
+            if (user == null) return false;
 
             if (!user.IsActive) return true;
 
@@ -55,7 +94,7 @@ namespace Service.Impl
 
             return false;
         }
-
+        
         public async Task<bool> MarkUserAsDeletedAsync(string userId)
         {
             UserProfileModel user = await _userManager.FindByIdAsync(userId);

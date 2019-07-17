@@ -8,6 +8,8 @@ namespace Service.DTO_s
 {
     public class CreateUserDTO
     {
+        public string Id { get; set; }
+
         public string Surname { get; set; }
 
         public string FirstName { get; set; }
