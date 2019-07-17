@@ -21,9 +21,11 @@ namespace Api
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+        public Startup(IConfiguration configuration, IHostingEnvironment env)
         {
             Configuration = configuration;
+            
+            
         }
 
         public IConfiguration Configuration { get; }
@@ -55,6 +57,16 @@ namespace Api
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
 
+            services.AddCors( option => {
+
+                option.AddPolicy("AllowedSites", builder => {
+
+                    builder.WithOrigins("http://127.0.0.1");
+
+                });
+
+            });
+
             //Adding application services
             services.AddTransient<IEmployer, EmployerService>();
             services.AddTransient<IGuarantor, GuarantorService>();
@@ -80,6 +92,7 @@ namespace Api
                 app.UseHsts();
             }
 
+            app.UseCors();
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();

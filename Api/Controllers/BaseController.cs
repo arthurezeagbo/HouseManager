@@ -52,5 +52,15 @@ namespace Api.Controllers
             _userManager = userManager;
             _roleManager = roleManager;
         }
+
+        public BaseController(ApplicationDbContext context, UserManager<UserProfileModel> userManager, RoleManager<ApplicationRoleModel> roleManager, IHelper helper, IGuarantor guarantor, IEmployer employer)
+        {
+            _context = context;
+            _userManager = userManager;
+            _roleManager = roleManager;
+            _helper = helper;
+            _guarantor = guarantor;
+            _employer = employer;
+        }
     }
 }
