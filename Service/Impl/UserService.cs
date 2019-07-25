@@ -45,7 +45,6 @@ namespace Service.Impl
             return false;
         }
 
-        
         public async Task<bool> DisableUserAsync(string userId)
         {
             UserProfileModel user = await _userManager.FindByIdAsync(userId);
@@ -116,7 +115,7 @@ namespace Service.Impl
 
         public async Task<UpdateUserDTO> UpdateUserAsync(string userId)
         {
-            UserProfileModel user =  _userManager.FindByIdAsync(userId).GetAwaiter().GetResult();
+            UserProfileModel user = await _userManager.FindByIdAsync(userId);//.GetAwaiter().GetResult();
 
             if (user == null) return null;
 
@@ -150,15 +149,18 @@ namespace Service.Impl
             
             try
             {
-                _context.Update(user);
-               
-                await _context.SaveChangesAsync();
+                using(var context = _context)
+                {
+                    context.Attach(user);
 
+                    await _context.SaveChangesAsync();
+                }
+                
                 return true;
             }
             catch (Exception ex)
             {
-                _logger.LogCritical(ex.Message, this.GetType().Name);
+                
             }
 
             return false;
@@ -187,41 +189,51 @@ namespace Service.Impl
             {
                 if (model.UserType.ToString().Equals(ApplicationRoles.GUARANTOR))
                 {
-                    GuarantorModel guarantor = new GuarantorModel
+                    using (var context = _context)
                     {
-                        Address = model.Address,
-                        Email = model.Email,
-                        FirstName = model.FirstName,
-                        Gender = model.Gender,
-                        LastName = model.LastName,
-                        PhoneNumber1 = model.PhoneNumber,
-                        State = model.State,
-                        Surname = model.Surname,
-                        User = user,
-                        UserId = user.Id,
-                    };
+                        GuarantorModel guarantor = new GuarantorModel
+                        {
+                            Address = model.Address,
+                            Email = model.Email,
+                            FirstName = model.FirstName,
+                            Gender = model.Gender,
 
-                    _context.Guarantor.Add(guarantor);
-                    await _context.SaveChangesAsync();
+                            LastName = model.LastName,
+                            PhoneNumber1 = model.PhoneNumber,
+                            State = model.State,
+                            Surname = model.Surname,
+
+                            User = user,
+                            UserId = user.Id,
+                        };
+
+                        context.Guarantor.Add(guarantor);
+                        await context.SaveChangesAsync();
+                    }
+   
                 }
                 else if (model.UserType.ToString().Equals(ApplicationRoles.EMPLOYER))
                 {
-                    EmployerModel employer = new EmployerModel
+                    using (var context = _context)
                     {
-                        Address = model.Address,
-                        Email = model.Email,
-                        FirstName = model.FirstName,
-                        Gender = model.Gender,
-                        LastName = model.LastName,
-                        PhoneNumber1 = model.PhoneNumber,
-                        State = model.State,
-                        Surname = model.Surname,
-                        User = user,
-                        UserId = user.Id,
-                    };
+                        EmployerModel employer = new EmployerModel
+                        {
+                            Address = model.Address,
+                            Email = model.Email,
+                            FirstName = model.FirstName,
+                            Gender = model.Gender,
+                            LastName = model.LastName,
+                            PhoneNumber1 = model.PhoneNumber,
+                            State = model.State,
+                            Surname = model.Surname,
+                            User = user,
+                            UserId = user.Id,
+                        };
 
-                    _context.Employer.Add(employer);
-                    await _context.SaveChangesAsync();
+                        context.Employer.Add(employer);
+                        await context.SaveChangesAsync();
+                    }
+                   
                 }
                 
                 var output = await _userManager.AddToRoleAsync(user, model.UserType.ToString());
@@ -231,10 +243,10 @@ namespace Service.Impl
             }
             else
             {
-                return  result.Succeeded.ToString();
+                return  "Failed creating user";
             }
 
-            return "Failed";
+            return "Failed creating user";
         }
         
     }

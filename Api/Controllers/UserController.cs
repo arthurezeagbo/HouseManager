@@ -17,7 +17,7 @@ namespace Api.Controllers
     [Authorize]
     public class UserController : BaseController
     {
-        private IUser _user;
+        private readonly IUser _user;
         private readonly SignInManager<UserProfileModel> _signInManager;
 
         public UserController(UserManager<UserProfileModel> userManager, RoleManager<ApplicationRoleModel> roleManager, IUser user, SignInManager<UserProfileModel> signInManager) : base(userManager, roleManager)
@@ -89,6 +89,9 @@ namespace Api.Controllers
             var user = await _userManager.FindByEmailAsync(model.Email);
 
             if (user == null) return "User does not exist";
+
+            if (!user.IsActive || user.IsMarkedAsDeleted)
+                return "Your account has been deactivated. Contact Admin";
 
             var result = await _signInManager.PasswordSignInAsync(model.Email, model.Password,model.RememberMe, false);
 

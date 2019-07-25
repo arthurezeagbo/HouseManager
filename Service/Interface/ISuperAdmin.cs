@@ -6,7 +6,7 @@ namespace Service.Interface
 {
     public interface ISuperAdmin
     {
-        Task<IEnumerable<CreateUserDTO>> GetAllAdmin();
+        Task<IEnumerable<AdminDTO>> GetAllAdmin();
 
         Task<bool> EnableAnyUserAsync(string id);
 

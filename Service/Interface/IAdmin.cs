@@ -10,9 +10,9 @@ namespace Service.Interface
 {
     public interface IAdmin
     {
-        Task<IEnumerable<CreateUserDTO>> GetAllAdmin();
+        Task<IEnumerable<AdminDTO>> GetAllAdmin();
 
-        Task<CreateUserDTO> GetAdminById(string id);
+        Task<AdminDTO> GetAdminById(string id);
         
         Task<IEnumerable> GetAllGuarantor();
 
@@ -24,7 +24,7 @@ namespace Service.Interface
 
         Task<IEnumerable> GetAllHelper();
 
-        Task GetHelperById(int id);
+        Task<HelperDTO> GetHelperById(int id);
 
         Task<bool> DisableUser(string userId);
 

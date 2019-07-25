@@ -1,0 +1,5 @@
+C:\Users\aafamuef\source\repos\HouseManager\Api
+--output-path=obj\Release\netcoreapp2.2\
+--application-name=Api
+--content-root=C:\Users\aafamuef\source\repos\HouseManager\Api
+--file=C:\Users\aafamuef\source\repos\HouseManager\Api\Pages\Index.cshtml

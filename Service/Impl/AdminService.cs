@@ -8,6 +8,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace Service.Impl
@@ -41,7 +42,7 @@ namespace Service.Impl
             return _user.ActivateUserAsync(userId);
         }
 
-        public async Task<CreateUserDTO> GetAdminById(string id)
+        public async Task<AdminDTO> GetAdminById(string id)
         {
             if (id == null) return null;
 
@@ -49,31 +50,34 @@ namespace Service.Impl
 
             if (user == null) return null;
 
-            CreateUserDTO userDto = new CreateUserDTO
+            AdminDTO userDto = new AdminDTO
             {
                 Id = user.Id,
                 Address = user.Address,
                 Email = user.Email,
                 FirstName = user.FirstName,
 
+                PhoneNumber = user.PhoneNumber,
                 LastName = user.LastName,
                 Surname = user.Surname,
                 State = user.State,
+
+                IsActive = user.IsActive
 
             };
 
             return userDto;
         }
 
-        public async Task<IEnumerable<CreateUserDTO>> GetAllAdmin()
+        public async Task<IEnumerable<AdminDTO>> GetAllAdmin()
         {
-            var result =  _userManager.GetUsersInRoleAsync(ApplicationRoles.ADMIN);
+            var result =  await _userManager.GetUsersInRoleAsync(ApplicationRoles.ADMIN);
 
-            List<CreateUserDTO> users = new List<CreateUserDTO>();
+            if (result == null) return null;
 
-            foreach(var user in await result)
-            {
-                users.Add(new CreateUserDTO {
+            var adminUsers = result.Select(user =>
+                new AdminDTO
+                {
 
                     Id = user.Id,
                     FirstName = user.FirstName,
@@ -82,11 +86,13 @@ namespace Service.Impl
                     Email = user.Email,
                     Address = user.Address,
                     State = user.State,
-                    PhoneNumber = user.PhoneNumber
-                    
+                    PhoneNumber = user.PhoneNumber,
+                    IsActive = user.IsActive
+
                 });
-            }
-            return users;
+
+            return adminUsers;
+
         }
 
         public async Task<IEnumerable> GetAllEmployer()
@@ -114,9 +120,9 @@ namespace Service.Impl
             return await _guarantor.GetByIdAsync(id);
         }
 
-        public Task GetHelperById(int id)
+        public async Task<HelperDTO> GetHelperById(int id)
         {
-            throw new NotImplementedException();
+            return await _helper.GetByIdAsync(id);
         }
     }
 }

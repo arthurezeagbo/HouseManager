@@ -67,6 +67,8 @@ namespace Api
 
             });
 
+            services.AddLogging();
+
             //Adding application services
             services.AddTransient<IEmployer, EmployerService>();
             services.AddTransient<IGuarantor, GuarantorService>();

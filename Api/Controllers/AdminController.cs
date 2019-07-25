@@ -4,23 +4,31 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using Service.Interface;
 using Settings.Constants;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 
 namespace Api.Controllers
 {
+    [ApiController]
+    [Route("api/[controller]")]
     [DisableCors]
     [Authorize(Roles = ""+ApplicationRoles.SUPER_ADMIN+","+ApplicationRoles.ADMIN+"")]
     public class AdminController : BaseController
     {
-        public AdminController(ApplicationDbContext context, UserManager<UserProfileModel> userManager, RoleManager<ApplicationRoleModel> roleManager, IHelper helper, IGuarantor guarantor, IEmployer employer)
+        private static Action<ILogger,string, Exception> _logMessage;
+        private ILogger<AdminController> _logger;
+
+        public AdminController(ApplicationDbContext context, UserManager<UserProfileModel> userManager, RoleManager<ApplicationRoleModel> roleManager, IHelper helper, IGuarantor guarantor, IEmployer employer, ILogger<AdminController> logger)
             : base(context, userManager, roleManager, helper, guarantor, employer)
         {
-
+            _logger = logger;
+            var a = MethodBase.GetCurrentMethod().Name;
         }
 
         [HttpGet("GetAllGuarantors")]
@@ -53,9 +61,12 @@ namespace Api.Controllers
             return null;
         }
 
-        [HttpGet("GetAllHelpers")]
+        [HttpGet("GetAllHelper")]
         public async Task<JsonResult> GetAllHelpers()
         {
+            var a = MethodBase.GetCurrentMethod().Name;
+            LogMessage(_logger, this.GetType(), MethodBase.GetCurrentMethod().Name, "GET all helpers");
+
             return Json(await _helper.GetAllAsync());
         }
 
@@ -68,7 +79,7 @@ namespace Api.Controllers
             return null;
         }
 
-        public async Task<JsonResult> DisableUser(string userId)
+        public  async Task<JsonResult> DisableUser(string userId)
         {
             return null;
         }
@@ -77,5 +88,15 @@ namespace Api.Controllers
         {
             return null;
         }
+
+        public static void LogMessage(ILogger logger,Type type, string actionName, string message)
+        {
+           
+            _logMessage = LoggerMessage.Define<string>(LogLevel.Information,  new EventId(2, actionName), $"{type}    {actionName} Log =========>>>   "+message);
+
+            var b = _logMessage;
+        }
+
+       
     }
 }

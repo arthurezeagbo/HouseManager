@@ -1,0 +1,15 @@
+C:\Users\aafamuef\source\repos\HouseManager\Data\bin\Release\netcoreapp2.2\appsettings.json
+C:\Users\aafamuef\source\repos\HouseManager\Data\bin\Release\netcoreapp2.2\Data.deps.json
+C:\Users\aafamuef\source\repos\HouseManager\Data\bin\Release\netcoreapp2.2\Data.runtimeconfig.json
+C:\Users\aafamuef\source\repos\HouseManager\Data\bin\Release\netcoreapp2.2\Data.runtimeconfig.dev.json
+C:\Users\aafamuef\source\repos\HouseManager\Data\bin\Release\netcoreapp2.2\Data.dll
+C:\Users\aafamuef\source\repos\HouseManager\Data\bin\Release\netcoreapp2.2\Data.pdb
+C:\Users\aafamuef\source\repos\HouseManager\Data\bin\Release\netcoreapp2.2\Settings.dll
+C:\Users\aafamuef\source\repos\HouseManager\Data\bin\Release\netcoreapp2.2\Settings.pdb
+C:\Users\aafamuef\source\repos\HouseManager\Data\obj\Release\netcoreapp2.2\Data.csprojAssemblyReference.cache
+C:\Users\aafamuef\source\repos\HouseManager\Data\obj\Release\netcoreapp2.2\Data.csproj.CoreCompileInputs.cache
+C:\Users\aafamuef\source\repos\HouseManager\Data\obj\Release\netcoreapp2.2\Data.AssemblyInfoInputs.cache
+C:\Users\aafamuef\source\repos\HouseManager\Data\obj\Release\netcoreapp2.2\Data.AssemblyInfo.cs
+C:\Users\aafamuef\source\repos\HouseManager\Data\obj\Release\netcoreapp2.2\Data.csproj.CopyComplete
+C:\Users\aafamuef\source\repos\HouseManager\Data\obj\Release\netcoreapp2.2\Data.dll
+C:\Users\aafamuef\source\repos\HouseManager\Data\obj\Release\netcoreapp2.2\Data.pdb

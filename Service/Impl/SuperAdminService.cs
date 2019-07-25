@@ -1,6 +1,7 @@
 ﻿using Data.Model;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Cors;
+using Microsoft.AspNetCore.Mvc;
 using Service.DTO_s;
 using Service.Interface;
 using Settings.Constants;
@@ -12,6 +13,8 @@ using System.Threading.Tasks;
 
 namespace Service.Impl
 {
+    [ApiController]
+    [Route("api/[controller]")]
     [Authorize(Roles = ""+ApplicationRoles.SUPER_ADMIN+"")]
 
     public class SuperAdminService : ISuperAdmin
@@ -39,7 +42,7 @@ namespace Service.Impl
             return result;
         }
 
-        public Task<IEnumerable<CreateUserDTO>> GetAllAdmin()
+        public Task<IEnumerable<AdminDTO>> GetAllAdmin()
         {
             return _admin.GetAllAdmin();
         }

@@ -1,0 +1,9 @@
+C:\Users\aafamuef\source\repos\HouseManager\Settings\bin\Release\netcoreapp2.2\Settings.deps.json
+C:\Users\aafamuef\source\repos\HouseManager\Settings\bin\Release\netcoreapp2.2\Settings.dll
+C:\Users\aafamuef\source\repos\HouseManager\Settings\bin\Release\netcoreapp2.2\Settings.pdb
+C:\Users\aafamuef\source\repos\HouseManager\Settings\obj\Release\netcoreapp2.2\Settings.csproj.CoreCompileInputs.cache
+C:\Users\aafamuef\source\repos\HouseManager\Settings\obj\Release\netcoreapp2.2\Settings.AssemblyInfoInputs.cache
+C:\Users\aafamuef\source\repos\HouseManager\Settings\obj\Release\netcoreapp2.2\Settings.AssemblyInfo.cs
+C:\Users\aafamuef\source\repos\HouseManager\Settings\obj\Release\netcoreapp2.2\Settings.dll
+C:\Users\aafamuef\source\repos\HouseManager\Settings\obj\Release\netcoreapp2.2\Settings.pdb
+C:\Users\aafamuef\source\repos\HouseManager\Settings\obj\Release\netcoreapp2.2\Settings.csprojAssemblyReference.cache

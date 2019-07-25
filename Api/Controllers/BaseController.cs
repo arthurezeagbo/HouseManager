@@ -2,12 +2,7 @@
 using Data.Model;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Service.Impl;
 using Service.Interface;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Api.Controllers
 {
@@ -20,7 +15,7 @@ namespace Api.Controllers
         protected readonly IGuarantor _guarantor;
         protected readonly IEmployer _employer;
         protected readonly IUser _user;
-        
+
         public BaseController()
         {
 

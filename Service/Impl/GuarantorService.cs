@@ -6,6 +6,7 @@ using Service.Interface;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
 using System.Threading.Tasks;
 
 
@@ -22,29 +23,29 @@ namespace Service.Impl
        
         public async Task<IEnumerable<GuarantorDTO>> GetAllAsync()
         {
-            if (!await _context.Guarantor.AnyAsync()) return null;
+            List<GuarantorModel> result = null;
 
-            List<GuarantorModel> result = await _context.Guarantor.ToListAsync();
-            List<GuarantorDTO> guarantors = null;
-            GuarantorDTO output = null;
-
-            foreach (GuarantorModel g in result)
+            using (var context = _context)
             {
-                output = new GuarantorDTO {
-                    Address = g.Address,
-                    Email = g.Email,
-                    FirstName = g.FirstName,
-                    Gender = g.Gender,
-                    LastName = g.LastName,
-                    PhoneNumber1 = g.PhoneNumber1,
-                    PhoneNumber2 = g.PhoneNumber2,
-                    State = g.State,
-                    Surname = g.Surname,
-                    Id = g.Id,
-                    DateCreated = g.DateCreated
-                };
-                guarantors.Add(output);
+                result = await context.Guarantor.AsNoTracking().ToListAsync();
             }
+            
+            if (result == null) return null;
+
+            var guarantors = result.Select(g => new GuarantorDTO
+            {
+                Address = g.Address,
+                Email = g.Email,
+                FirstName = g.FirstName,
+                Gender = g.Gender,
+                LastName = g.LastName,
+                PhoneNumber1 = g.PhoneNumber1,
+                PhoneNumber2 = g.PhoneNumber2,
+                State = g.State,
+                Surname = g.Surname,
+                Id = g.Id,
+                DateCreated = g.DateCreated
+            });          
 
             return guarantors;
         }
@@ -53,8 +54,13 @@ namespace Service.Impl
         {
             if (string.IsNullOrEmpty(id.ToString())) return null;
 
-            GuarantorModel user = await _context.Guarantor.FirstOrDefaultAsync(c => c.Id == id);
+            GuarantorModel user;
 
+            using (var context = _context)
+            {
+                user = await context.Guarantor.AsNoTracking().FirstOrDefaultAsync(c => c.Id == id);
+            }
+          
             GuarantorDTO result = new GuarantorDTO {
                 DateCreated = user.DateCreated,
                 Id = user.Id,
@@ -88,10 +94,12 @@ namespace Service.Impl
                     LastName = user.LastName,
                 };
 
-                _context.Guarantor.Attach(guarantor);
-                _context.Entry(guarantor).State = EntityState.Modified;
 
+                _context.Guarantor.Attach(guarantor);
+              
                 await _context.SaveChangesAsync();
+                _context.Dispose();
+
                 return Task.CompletedTask.IsCompleted;
             }
             catch (Exception ex) { }

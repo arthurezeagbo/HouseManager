@@ -7,6 +7,7 @@ using Service.Interface;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace Service.Impl
@@ -21,6 +22,7 @@ namespace Service.Impl
             _context = context;
             _userManager = userManager;
         }
+
         public async Task<bool> AddAsync(HelperDTO user)
         {
             try
@@ -54,45 +56,39 @@ namespace Service.Impl
 
         public async Task<IEnumerable<HelperDTO>> GetAllAsync()
         {
-            var helpers = await _context.Helper.AnyAsync() ? _context.Helper.ToListAsync() : null;
+            var result = await _context.Helper.AsNoTracking().AnyAsync() ? _context.Helper.AsNoTracking().ToListAsync() : null;
 
-            List<HelperModel> all = helpers.GetAwaiter().GetResult();
+            if (result == null) return null;
 
-            List<HelperDTO> helpersDTO = null;
-
-            HelperDTO helper = null;
-
-            foreach(HelperModel user in all)
+            var helpers = result.Result.Select(user => new HelperDTO
             {
-                helper = new HelperDTO {
 
-                    DateCreated = user.DateCreated,
-                    DateOfBirth = user.DateOfBirth,
-                    FirstName = user.FirstName,
-                    Gender = user.Gender,
+                DateCreated = user.DateCreated,
+                DateOfBirth = user.DateOfBirth,
+                FirstName = user.FirstName,
+                Gender = user.Gender,
 
-                    Id = user.Id,
-                    LastName = user.LastName,
-                    Qualification = user.Qualification,
-                    Religion = user.Religion,
+                Id = user.Id,
+                LastName = user.LastName,
+                Qualification = user.Qualification,
+                Religion = user.Religion,
 
-                    State = user.State,
-                    Surname = user.Surname,
-                    Guarantor = string.Concat(user.Guarantor.Surname," ",user.Guarantor.FirstName," ",user.Guarantor.LastName)
+                State = user.State,
+                Surname = user.Surname,
+                Guarantor = string.Concat(user.Guarantor.Surname, " ", user.Guarantor.FirstName, " ", user.Guarantor.LastName)
 
-                };
+            });
 
-                helpersDTO.Add(helper);
-            }
+            _context.Dispose();
 
-            return helpersDTO;
+            return helpers;
         }
 
         public async Task<HelperDTO> GetByIdAsync(int id)
         {
             if (string.IsNullOrEmpty(id.ToString())) return null;
 
-            HelperModel user = await _context.Helper.FirstOrDefaultAsync(c => c.Id == id);
+            HelperModel user = await _context.Helper.AsNoTracking().FirstOrDefaultAsync(c => c.Id == id);
 
             HelperDTO result = new HelperDTO
             {
@@ -111,6 +107,8 @@ namespace Service.Impl
                 Surname = user.Surname  
                 
             };
+
+            _context.Dispose();
 
             return result;
         }
@@ -132,17 +130,17 @@ namespace Service.Impl
                     Surname = user.Surname
                 };
 
-                _context.Helper.Attach(helper);
+                using(var context = _context)
+                {
+                    context.Helper.Attach(helper);
 
-                _context.Entry(helper).State = EntityState.Modified;
-
-                await _context.SaveChangesAsync();
-
-                return Task.CompletedTask.IsCompleted;
+                    await _context.SaveChangesAsync();
+                    return true;
+                }               
             }
             catch (Exception ex) { }
 
-            return Task.CompletedTask.IsCanceled;
+            return false;
         }
     }
 }

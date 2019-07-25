@@ -4,8 +4,6 @@ C:\Users\aafamuef\source\repos\HouseManager\Api\bin\Debug\netcoreapp2.2\Api.runt
 C:\Users\aafamuef\source\repos\HouseManager\Api\bin\Debug\netcoreapp2.2\Api.runtimeconfig.dev.json
 C:\Users\aafamuef\source\repos\HouseManager\Api\bin\Debug\netcoreapp2.2\Api.dll
 C:\Users\aafamuef\source\repos\HouseManager\Api\bin\Debug\netcoreapp2.2\Api.pdb
-C:\Users\aafamuef\source\repos\HouseManager\Api\bin\Debug\netcoreapp2.2\Api.Views.dll
-C:\Users\aafamuef\source\repos\HouseManager\Api\bin\Debug\netcoreapp2.2\Api.Views.pdb
 C:\Users\aafamuef\source\repos\HouseManager\Api\bin\Debug\netcoreapp2.2\Data.dll
 C:\Users\aafamuef\source\repos\HouseManager\Api\bin\Debug\netcoreapp2.2\Service.dll
 C:\Users\aafamuef\source\repos\HouseManager\Api\bin\Debug\netcoreapp2.2\Settings.dll
@@ -14,10 +12,15 @@ C:\Users\aafamuef\source\repos\HouseManager\Api\bin\Debug\netcoreapp2.2\Service.
 C:\Users\aafamuef\source\repos\HouseManager\Api\bin\Debug\netcoreapp2.2\Settings.pdb
 C:\Users\aafamuef\source\repos\HouseManager\Api\obj\Debug\netcoreapp2.2\Api.csprojAssemblyReference.cache
 C:\Users\aafamuef\source\repos\HouseManager\Api\obj\Debug\netcoreapp2.2\Api.csproj.CoreCompileInputs.cache
-C:\Users\aafamuef\source\repos\HouseManager\Api\obj\Debug\netcoreapp2.2\Api.RazorAssemblyInfo.cache
-C:\Users\aafamuef\source\repos\HouseManager\Api\obj\Debug\netcoreapp2.2\Api.RazorAssemblyInfo.cs
 C:\Users\aafamuef\source\repos\HouseManager\Api\obj\Debug\netcoreapp2.2\Api.AssemblyInfoInputs.cache
 C:\Users\aafamuef\source\repos\HouseManager\Api\obj\Debug\netcoreapp2.2\Api.AssemblyInfo.cs
+C:\Users\aafamuef\source\repos\HouseManager\Api\obj\Debug\netcoreapp2.2\Api.csproj.CopyComplete
+C:\Users\aafamuef\source\repos\HouseManager\Api\obj\Debug\netcoreapp2.2\Api.dll
+C:\Users\aafamuef\source\repos\HouseManager\Api\obj\Debug\netcoreapp2.2\Api.pdb
+C:\Users\aafamuef\source\repos\HouseManager\Api\bin\Debug\netcoreapp2.2\Api.Views.dll
+C:\Users\aafamuef\source\repos\HouseManager\Api\bin\Debug\netcoreapp2.2\Api.Views.pdb
+C:\Users\aafamuef\source\repos\HouseManager\Api\obj\Debug\netcoreapp2.2\Api.RazorAssemblyInfo.cache
+C:\Users\aafamuef\source\repos\HouseManager\Api\obj\Debug\netcoreapp2.2\Api.RazorAssemblyInfo.cs
 C:\Users\aafamuef\source\repos\HouseManager\Api\obj\Debug\netcoreapp2.2\Api.TagHelpers.input.cache
 C:\Users\aafamuef\source\repos\HouseManager\Api\obj\Debug\netcoreapp2.2\Api.TagHelpers.output.cache
 C:\Users\aafamuef\source\repos\HouseManager\Api\obj\Debug\netcoreapp2.2\Api.RazorCoreGenerate.cache
@@ -25,6 +28,3 @@ C:\Users\aafamuef\source\repos\HouseManager\Api\obj\Debug\netcoreapp2.2\Razor\Pa
 C:\Users\aafamuef\source\repos\HouseManager\Api\obj\Debug\netcoreapp2.2\Api.RazorTargetAssemblyInfo.cache
 C:\Users\aafamuef\source\repos\HouseManager\Api\obj\Debug\netcoreapp2.2\Api.RazorTargetAssemblyInfo.cs
 C:\Users\aafamuef\source\repos\HouseManager\Api\obj\Debug\netcoreapp2.2\Api.Views.pdb
-C:\Users\aafamuef\source\repos\HouseManager\Api\obj\Debug\netcoreapp2.2\Api.csproj.CopyComplete
-C:\Users\aafamuef\source\repos\HouseManager\Api\obj\Debug\netcoreapp2.2\Api.dll
-C:\Users\aafamuef\source\repos\HouseManager\Api\obj\Debug\netcoreapp2.2\Api.pdb
