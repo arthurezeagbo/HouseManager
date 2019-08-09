@@ -105,7 +105,7 @@ namespace Api.Controllers
         [Route("LogOut")]
         public async Task<string> LogOut()
         {
-            await _signInManager.SignOutAsync();
+            await _signInManager.SignOutAsync(); 
 
             return "User signed out";
         }

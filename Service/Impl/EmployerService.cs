@@ -102,7 +102,7 @@ namespace Service.Impl
 
                 using (var context = _context)
                 {
-                    _context.Attach(employer);
+                    _context.Employer.Attach(employer);
 
                     await _context.SaveChangesAsync();
                     return Task.CompletedTask.IsCompleted;

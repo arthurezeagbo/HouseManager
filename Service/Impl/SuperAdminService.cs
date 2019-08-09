@@ -16,7 +16,6 @@ namespace Service.Impl
     [ApiController]
     [Route("api/[controller]")]
     [Authorize(Roles = ""+ApplicationRoles.SUPER_ADMIN+"")]
-
     public class SuperAdminService : ISuperAdmin
     {
         protected readonly IUser _user;

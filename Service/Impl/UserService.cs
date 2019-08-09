@@ -151,7 +151,7 @@ namespace Service.Impl
             {
                 using(var context = _context)
                 {
-                    context.Attach(user);
+                    context.Users.Attach(user);
 
                     await _context.SaveChangesAsync();
                 }

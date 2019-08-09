@@ -3,10 +3,7 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.Extensions.Configuration;
-using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Text;
 
 namespace Data
 {
@@ -32,6 +29,36 @@ namespace Data
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
+            builder.HasDefaultSchema("housemanager");
+
+            builder.Entity<HelperModel>(c => 
+            {
+                c.HasKey(d => d.Id);
+                c.HasOne(d => d.Guarantor);
+                c.HasOne(d => d.Employer);
+                c.Property(d => d.Guarantor).IsRequired(true);
+                c.Property(d => d.Employer).IsRequired(false);
+                c.Property(d => d.Id).HasColumnType("int").HasColumnName("HelperId").IsRequired(true);
+                c.ToTable("Helper");
+            });
+
+            builder.Entity<GuarantorModel>(c =>
+            {
+                c.HasKey(d => d.Id);
+                c.HasMany(d => d.Helpers);
+                c.HasMany(d => d.Employers);
+                c.ToTable("Guarantor");
+                c.Property(d => d.Id).HasColumnType("int").HasColumnName("GuarantorId").IsRequired(true);
+            });
+
+            builder.Entity<EmployerModel>(c =>
+            {
+                c.HasKey(d => d.Id);
+                c.HasMany(d => d.Helpers);
+                c.ToTable("Employer");
+                c.Property(d => d.Id).HasColumnType("int").HasColumnName("EmployerId").IsRequired(true);
+            });
+
             base.OnModelCreating(builder);
         }
 

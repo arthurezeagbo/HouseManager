@@ -21,19 +21,20 @@ namespace Api.Controllers
     [Authorize(Roles = ""+ApplicationRoles.SUPER_ADMIN+","+ApplicationRoles.ADMIN+"")]
     public class AdminController : BaseController
     {
-        private static Action<ILogger,string, Exception> _logMessage;
         private ILogger<AdminController> _logger;
 
         public AdminController(ApplicationDbContext context, UserManager<UserProfileModel> userManager, RoleManager<ApplicationRoleModel> roleManager, IHelper helper, IGuarantor guarantor, IEmployer employer, ILogger<AdminController> logger)
             : base(context, userManager, roleManager, helper, guarantor, employer)
         {
             _logger = logger;
-            var a = MethodBase.GetCurrentMethod().Name;
+           
         }
 
         [HttpGet("GetAllGuarantors")]
         public async Task<JsonResult> GetAllGuarantors()
         {
+            _logger.LogInformation(">>>> Getting all guarantor" );
+
             return Json(await _guarantor.GetAllAsync());
         }
 
@@ -64,9 +65,6 @@ namespace Api.Controllers
         [HttpGet("GetAllHelper")]
         public async Task<JsonResult> GetAllHelpers()
         {
-            var a = MethodBase.GetCurrentMethod().Name;
-            LogMessage(_logger, this.GetType(), MethodBase.GetCurrentMethod().Name, "GET all helpers");
-
             return Json(await _helper.GetAllAsync());
         }
 
@@ -88,15 +86,6 @@ namespace Api.Controllers
         {
             return null;
         }
-
-        public static void LogMessage(ILogger logger,Type type, string actionName, string message)
-        {
-           
-            _logMessage = LoggerMessage.Define<string>(LogLevel.Information,  new EventId(2, actionName), $"{type}    {actionName} Log =========>>>   "+message);
-
-            var b = _logMessage;
-        }
-
        
     }
 }

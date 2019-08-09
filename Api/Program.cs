@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.IO;
 using Data;
 using Data.Model;
 using Microsoft.AspNetCore;
@@ -10,23 +6,36 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
+using Serilog;
+using Serilog.Events;
 
 namespace Api
 {
     public class Program
     {
+        
         public static void Main(string[] args)
         {
+
+            Log.Logger = new LoggerConfiguration()
+                    .MinimumLevel.Debug()
+                    .MinimumLevel.Override("Microsoft", LogEventLevel.Information)
+                    .Enrich.FromLogContext()
+                    .WriteTo.File("Logs\\HouseManager.txt", rollingInterval: RollingInterval.Day, outputTemplate: "{Timestamp:yyyy-MM-dd HH:mm:ss.fff zzz} [{Level:u3}] {Message:lj}{NewLine}{Exception}")
+                    .CreateLogger();
+
             IWebHost host = CreateWebHostBuilder(args).Build();
 
             using (var scope = host.Services.CreateScope())
             {
                 var service = scope.ServiceProvider;
 
-                var context = service.GetRequiredService<ApplicationDbContext>();
-                var userManager = service.GetRequiredService<UserManager<UserProfileModel>>();
-                var roleManager = service.GetRequiredService<RoleManager<ApplicationRoleModel>>();
+                IHostingEnvironment _hostingEnvironment = service.GetService<IHostingEnvironment>();
+                var contentRoot = _hostingEnvironment.ContentRootPath;
+
+                ApplicationDbContext context = service.GetRequiredService<ApplicationDbContext>();
+                UserManager<UserProfileModel> userManager = service.GetRequiredService<UserManager<UserProfileModel>>();
+                RoleManager<ApplicationRoleModel> roleManager = service.GetRequiredService<RoleManager<ApplicationRoleModel>>();
 
                 SeedData.SetUpDatabaseAsync(context, userManager, roleManager).GetAwaiter().GetResult();
             }
@@ -35,6 +44,7 @@ namespace Api
         }
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
+           
             WebHost.CreateDefaultBuilder(args)
             .UseContentRoot(Directory.GetCurrentDirectory())
             .ConfigureAppConfiguration((hostingContext, config) => {
@@ -48,13 +58,7 @@ namespace Api
                 config.AddEnvironmentVariables();
 
             })
-            .ConfigureLogging((hostingContext, logging) =>
-            {
-                logging.AddConfiguration(hostingContext.Configuration.GetSection("Logging"));
-                logging.AddConsole();
-                logging.AddDebug();
-                logging.AddEventSourceLogger();
-            })
-            .UseStartup<Startup>();
+            .UseStartup<Startup>()
+            .UseSerilog();
     }
 }
