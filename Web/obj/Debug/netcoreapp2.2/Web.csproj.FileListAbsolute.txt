@@ -29,3 +29,4 @@ C:\Users\aafamuef\source\repos\HouseManager\Web\obj\Debug\netcoreapp2.2\Web.View
 C:\Users\aafamuef\source\repos\HouseManager\Web\obj\Debug\netcoreapp2.2\Web.dll
 C:\Users\aafamuef\source\repos\HouseManager\Web\obj\Debug\netcoreapp2.2\Web.pdb
 C:\Users\aafamuef\source\repos\HouseManager\Web\obj\Debug\netcoreapp2.2\Web.csproj.CopyComplete
+C:\Users\aafamuef\source\repos\HouseManager\Web\obj\Debug\netcoreapp2.2\Web.csprojAssemblyReference.cache
