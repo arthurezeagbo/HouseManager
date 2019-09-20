@@ -13,7 +13,7 @@ namespace Api.Controllers
     [Route("api/[controller]/")]
     [ApiController]
     [DisableCors]
-    [Authorize(Roles = ""+ApplicationRoles.SUPER_ADMIN+"")]
+   // [Authorize(Roles = ""+ApplicationRoles.SUPER_ADMIN+"")]
     public class SuperAdminController : BaseController
     {
         private readonly IAdmin _admin;

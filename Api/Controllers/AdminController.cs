@@ -18,7 +18,7 @@ namespace Api.Controllers
     [ApiController]
     [Route("api/[controller]")]
     [DisableCors]
-    [Authorize(Roles = ""+ApplicationRoles.SUPER_ADMIN+","+ApplicationRoles.ADMIN+"")]
+    //[Authorize(Roles = ""+ApplicationRoles.SUPER_ADMIN+","+ApplicationRoles.ADMIN+"")]
     public class AdminController : BaseController
     {
         private ILogger<AdminController> _logger;

@@ -1,0 +1,650 @@
+2019-08-13 19:48:33.049 +01:00 [INF] User profile is available. Using 'C:\Users\aafamuef\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2019-08-13 19:48:39.222 +01:00 [INF] Entity Framework Core 2.2.6-servicing-10079 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=Data 
+2019-08-13 19:48:42.431 +01:00 [INF] Executed DbCommand (210ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetRoles] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2019-08-13 19:48:42.500 +01:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2019-08-13 19:53:21.073 +01:00 [INF] User profile is available. Using 'C:\Users\aafamuef\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2019-08-13 19:53:21.685 +01:00 [INF] Entity Framework Core 2.2.6-servicing-10079 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=Data 
+2019-08-13 19:53:22.250 +01:00 [INF] Executed DbCommand (36ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetRoles] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2019-08-13 19:53:22.305 +01:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2019-08-13 19:57:20.379 +01:00 [INF] User profile is available. Using 'C:\Users\aafamuef\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2019-08-13 19:57:20.884 +01:00 [INF] Entity Framework Core 2.2.6-servicing-10079 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=Data 
+2019-08-13 19:57:21.367 +01:00 [INF] Executed DbCommand (33ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetRoles] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2019-08-13 19:57:21.411 +01:00 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2019-08-13 19:57:35.085 +01:00 [INF] Request starting HTTP/2.0 GET https://localhost:44392/  
+2019-08-13 19:57:35.382 +01:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2019-08-13 19:57:36.134 +01:00 [INF] Route matched with {page = "/Index", action = "", controller = "", area = ""}. Executing page /Index
+2019-08-13 19:57:36.179 +01:00 [INF] Executing handler method Api.Pages.IndexModel.OnGet - ModelState is "Valid"
+2019-08-13 19:57:36.179 +01:00 [INF] Executed handler method OnGet, returned result .
+2019-08-13 19:57:36.184 +01:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2019-08-13 19:57:36.184 +01:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2019-08-13 19:57:36.346 +01:00 [INF] Executed page /Index in 187.7045ms
+2019-08-13 19:57:36.354 +01:00 [INF] Request finished in 1270.6542ms 200 text/html; charset=utf-8
+2019-08-13 19:59:30.941 +01:00 [INF] User profile is available. Using 'C:\Users\aafamuef\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2019-08-13 19:59:31.397 +01:00 [INF] Entity Framework Core 2.2.6-servicing-10079 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=Data 
+2019-08-13 19:59:31.875 +01:00 [INF] Executed DbCommand (40ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetRoles] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2019-08-13 19:59:31.917 +01:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2019-08-13 20:00:36.808 +01:00 [INF] Request starting HTTP/2.0 GET https://localhost:44392/  
+2019-08-13 20:00:37.010 +01:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2019-08-13 20:00:37.351 +01:00 [INF] Route matched with {page = "/Index", action = "", controller = "", area = ""}. Executing page /Index
+2019-08-13 20:00:37.371 +01:00 [INF] Executing handler method Api.Pages.IndexModel.OnGet - ModelState is "Valid"
+2019-08-13 20:00:37.371 +01:00 [INF] Executed handler method OnGet, returned result .
+2019-08-13 20:00:37.374 +01:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2019-08-13 20:00:37.374 +01:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2019-08-13 20:00:37.432 +01:00 [INF] Executed page /Index in 76.6272ms
+2019-08-13 20:00:37.440 +01:00 [INF] Request finished in 633.173ms 200 text/html; charset=utf-8
+2019-08-13 20:02:35.620 +01:00 [INF] User profile is available. Using 'C:\Users\aafamuef\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2019-08-13 20:02:36.224 +01:00 [INF] Entity Framework Core 2.2.6-servicing-10079 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=Data 
+2019-08-13 20:02:37.029 +01:00 [INF] Executed DbCommand (47ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetRoles] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2019-08-13 20:02:37.095 +01:00 [INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2019-08-13 20:02:51.847 +01:00 [INF] Request starting HTTP/2.0 GET https://localhost:44392/  
+2019-08-13 20:02:51.993 +01:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2019-08-13 20:02:52.432 +01:00 [INF] Route matched with {page = "/Index", action = "", controller = "", area = ""}. Executing page /Index
+2019-08-13 20:02:52.461 +01:00 [INF] Executing handler method Api.Pages.IndexModel.OnGet - ModelState is "Valid"
+2019-08-13 20:02:52.461 +01:00 [INF] Executed handler method OnGet, returned result .
+2019-08-13 20:02:52.465 +01:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2019-08-13 20:02:52.465 +01:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2019-08-13 20:02:52.551 +01:00 [INF] Executed page /Index in 111.1183ms
+2019-08-13 20:02:52.561 +01:00 [INF] Request finished in 714.4358ms 200 text/html; charset=utf-8
+2019-08-13 20:03:45.989 +01:00 [INF] User profile is available. Using 'C:\Users\aafamuef\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2019-08-13 20:03:46.661 +01:00 [INF] Entity Framework Core 2.2.6-servicing-10079 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=Data 
+2019-08-13 20:03:47.274 +01:00 [INF] Executed DbCommand (46ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetRoles] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2019-08-13 20:03:47.340 +01:00 [INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2019-08-13 20:10:59.868 +01:00 [INF] User profile is available. Using 'C:\Users\aafamuef\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2019-08-13 20:11:00.300 +01:00 [INF] Entity Framework Core 2.2.6-servicing-10079 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=Data 
+2019-08-13 20:11:00.723 +01:00 [INF] Executed DbCommand (27ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetRoles] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2019-08-13 20:11:00.760 +01:00 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2019-08-13 20:11:07.579 +01:00 [INF] Request starting HTTP/2.0 GET https://localhost:44392/  
+2019-08-13 20:11:07.717 +01:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2019-08-13 20:11:08.010 +01:00 [INF] Route matched with {page = "/Index", action = "", controller = "", area = ""}. Executing page /Index
+2019-08-13 20:11:08.031 +01:00 [INF] Executing handler method Api.Pages.IndexModel.OnGet - ModelState is "Valid"
+2019-08-13 20:11:08.031 +01:00 [INF] Executed handler method OnGet, returned result .
+2019-08-13 20:11:08.035 +01:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2019-08-13 20:11:08.035 +01:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2019-08-13 20:11:08.088 +01:00 [INF] Executed page /Index in 74.9529ms
+2019-08-13 20:11:08.096 +01:00 [INF] Request finished in 517.7761ms 200 text/html; charset=utf-8
+2019-08-13 20:15:20.772 +01:00 [INF] User profile is available. Using 'C:\Users\aafamuef\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2019-08-13 20:15:21.218 +01:00 [INF] Entity Framework Core 2.2.6-servicing-10079 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=Data 
+2019-08-13 20:15:21.674 +01:00 [INF] Executed DbCommand (40ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetRoles] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2019-08-13 20:15:21.727 +01:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2019-08-13 20:16:10.733 +01:00 [INF] Request starting HTTP/2.0 GET https://localhost:44392/  
+2019-08-13 20:16:10.855 +01:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2019-08-13 20:16:11.143 +01:00 [INF] Route matched with {page = "/Index", action = "", controller = "", area = ""}. Executing page /Index
+2019-08-13 20:16:11.164 +01:00 [INF] Executing handler method Api.Pages.IndexModel.OnGet - ModelState is "Valid"
+2019-08-13 20:16:11.164 +01:00 [INF] Executed handler method OnGet, returned result .
+2019-08-13 20:16:11.168 +01:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2019-08-13 20:16:11.169 +01:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2019-08-13 20:16:11.250 +01:00 [INF] Executed page /Index in 100.4504ms
+2019-08-13 20:16:11.259 +01:00 [INF] Request finished in 526.7407ms 200 text/html; charset=utf-8
+2019-08-13 20:19:56.442 +01:00 [INF] User profile is available. Using 'C:\Users\aafamuef\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2019-08-13 20:19:56.901 +01:00 [INF] Entity Framework Core 2.2.6-servicing-10079 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=Data 
+2019-08-13 20:19:57.362 +01:00 [INF] Executed DbCommand (32ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetRoles] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2019-08-13 20:19:57.405 +01:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2019-08-13 20:21:36.866 +01:00 [INF] User profile is available. Using 'C:\Users\aafamuef\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2019-08-13 20:21:37.311 +01:00 [INF] Entity Framework Core 2.2.6-servicing-10079 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=Data 
+2019-08-13 20:21:37.747 +01:00 [INF] Executed DbCommand (37ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetRoles] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2019-08-13 20:21:37.798 +01:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2019-08-13 20:40:04.443 +01:00 [INF] User profile is available. Using 'C:\Users\aafamuef\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2019-08-13 20:40:06.100 +01:00 [INF] Entity Framework Core 2.2.6-servicing-10079 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=Data 
+2019-08-13 20:40:08.025 +01:00 [INF] Executed DbCommand (157ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetRoles] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2019-08-13 20:40:08.098 +01:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2019-08-13 20:44:49.547 +01:00 [INF] User profile is available. Using 'C:\Users\aafamuef\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2019-08-13 20:44:50.226 +01:00 [INF] Entity Framework Core 2.2.6-servicing-10079 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=Data 
+2019-08-13 20:44:50.885 +01:00 [INF] Executed DbCommand (50ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetRoles] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2019-08-13 20:44:50.945 +01:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2019-08-13 20:47:54.399 +01:00 [INF] User profile is available. Using 'C:\Users\aafamuef\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2019-08-13 20:47:54.972 +01:00 [INF] Entity Framework Core 2.2.6-servicing-10079 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=Data 
+2019-08-13 20:47:55.445 +01:00 [INF] Executed DbCommand (34ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetRoles] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2019-08-13 20:47:55.512 +01:00 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2019-08-13 20:49:11.726 +01:00 [INF] User profile is available. Using 'C:\Users\aafamuef\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2019-08-13 20:49:12.248 +01:00 [INF] Entity Framework Core 2.2.6-servicing-10079 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=Data 
+2019-08-13 20:49:12.760 +01:00 [INF] Executed DbCommand (35ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetRoles] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2019-08-13 20:49:12.817 +01:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2019-08-13 20:50:18.914 +01:00 [INF] User profile is available. Using 'C:\Users\aafamuef\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2019-08-13 20:50:19.430 +01:00 [INF] Entity Framework Core 2.2.6-servicing-10079 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=Data 
+2019-08-13 20:50:19.945 +01:00 [INF] Executed DbCommand (41ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetRoles] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2019-08-13 20:50:19.997 +01:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2019-08-13 20:53:03.606 +01:00 [INF] User profile is available. Using 'C:\Users\aafamuef\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2019-08-13 20:53:04.155 +01:00 [INF] Entity Framework Core 2.2.6-servicing-10079 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=Data 
+2019-08-13 20:53:04.663 +01:00 [INF] Executed DbCommand (35ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetRoles] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2019-08-13 20:53:04.716 +01:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2019-08-13 20:54:34.483 +01:00 [INF] User profile is available. Using 'C:\Users\aafamuef\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2019-08-13 20:54:34.996 +01:00 [INF] Entity Framework Core 2.2.6-servicing-10079 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=Data 
+2019-08-13 20:54:35.484 +01:00 [INF] Executed DbCommand (33ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetRoles] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2019-08-13 20:54:35.549 +01:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2019-08-13 20:55:34.850 +01:00 [INF] User profile is available. Using 'C:\Users\aafamuef\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2019-08-13 20:55:35.354 +01:00 [INF] Entity Framework Core 2.2.6-servicing-10079 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=Data 
+2019-08-13 20:55:35.867 +01:00 [INF] Executed DbCommand (32ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetRoles] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2019-08-13 20:55:35.931 +01:00 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2019-08-13 20:55:53.668 +01:00 [INF] Request starting HTTP/2.0 GET https://localhost:44392/  
+2019-08-13 20:55:53.821 +01:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2019-08-13 20:55:54.426 +01:00 [INF] Route matched with {page = "/Index", action = "", controller = "", area = ""}. Executing page /Index
+2019-08-13 20:55:54.449 +01:00 [INF] Executing handler method Api.Pages.IndexModel.OnGet - ModelState is "Valid"
+2019-08-13 20:55:54.449 +01:00 [INF] Executed handler method OnGet, returned result .
+2019-08-13 20:55:54.453 +01:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2019-08-13 20:55:54.453 +01:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2019-08-13 20:55:54.572 +01:00 [INF] Executed page /Index in 121.885ms
+2019-08-13 20:55:54.582 +01:00 [INF] Request finished in 915.0872ms 200 text/html; charset=utf-8
+2019-08-13 20:57:09.562 +01:00 [INF] User profile is available. Using 'C:\Users\aafamuef\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2019-08-13 20:57:20.456 +01:00 [INF] Entity Framework Core 2.2.6-servicing-10079 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=Data 
+2019-08-13 20:57:21.173 +01:00 [INF] Executed DbCommand (99ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetRoles] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2019-08-13 20:57:21.225 +01:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2019-08-13 20:59:11.003 +01:00 [INF] Request starting HTTP/2.0 GET https://localhost:44392/  
+2019-08-13 20:59:11.180 +01:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2019-08-13 20:59:11.606 +01:00 [INF] Route matched with {page = "/Index", action = "", controller = "", area = ""}. Executing page /Index
+2019-08-13 20:59:11.635 +01:00 [INF] Executing handler method Api.Pages.IndexModel.OnGet - ModelState is "Valid"
+2019-08-13 20:59:11.635 +01:00 [INF] Executed handler method OnGet, returned result .
+2019-08-13 20:59:11.641 +01:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2019-08-13 20:59:11.641 +01:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2019-08-13 20:59:11.738 +01:00 [INF] Executed page /Index in 126.22800000000001ms
+2019-08-13 20:59:11.744 +01:00 [INF] Request finished in 743.0938ms 200 text/html; charset=utf-8
+2019-08-13 21:00:06.459 +01:00 [INF] User profile is available. Using 'C:\Users\aafamuef\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2019-08-13 21:00:07.006 +01:00 [INF] Entity Framework Core 2.2.6-servicing-10079 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=Data 
+2019-08-13 21:00:07.494 +01:00 [INF] Executed DbCommand (36ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetRoles] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2019-08-13 21:00:07.548 +01:00 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2019-08-13 21:02:00.464 +01:00 [INF] User profile is available. Using 'C:\Users\aafamuef\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2019-08-13 21:02:00.963 +01:00 [INF] Entity Framework Core 2.2.6-servicing-10079 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=Data 
+2019-08-13 21:02:01.498 +01:00 [INF] Executed DbCommand (41ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetRoles] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2019-08-13 21:02:01.543 +01:00 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2019-08-13 21:02:05.272 +01:00 [INF] Request starting HTTP/2.0 GET https://localhost:44392/  
+2019-08-13 21:02:05.410 +01:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2019-08-13 21:02:05.742 +01:00 [INF] Route matched with {page = "/Index", action = "", controller = "", area = ""}. Executing page /Index
+2019-08-13 21:02:05.774 +01:00 [INF] Executing handler method Api.Pages.IndexModel.OnGet - ModelState is "Valid"
+2019-08-13 21:02:05.774 +01:00 [INF] Executed handler method OnGet, returned result .
+2019-08-13 21:02:05.780 +01:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2019-08-13 21:02:05.780 +01:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2019-08-13 21:02:05.880 +01:00 [INF] Executed page /Index in 133.8916ms
+2019-08-13 21:02:05.893 +01:00 [INF] Request finished in 620.8358ms 200 text/html; charset=utf-8
+2019-08-13 21:02:28.999 +01:00 [INF] User profile is available. Using 'C:\Users\aafamuef\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2019-08-13 21:02:29.605 +01:00 [INF] Entity Framework Core 2.2.6-servicing-10079 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=Data 
+2019-08-13 21:02:30.115 +01:00 [INF] Executed DbCommand (42ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetRoles] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2019-08-13 21:02:30.158 +01:00 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2019-08-13 21:02:33.723 +01:00 [INF] Request starting HTTP/2.0 GET https://localhost:44392/  
+2019-08-13 21:02:33.874 +01:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2019-08-13 21:02:34.255 +01:00 [INF] Route matched with {page = "/Index", action = "", controller = "", area = ""}. Executing page /Index
+2019-08-13 21:02:34.286 +01:00 [INF] Executing handler method Api.Pages.IndexModel.OnGet - ModelState is "Valid"
+2019-08-13 21:02:34.286 +01:00 [INF] Executed handler method OnGet, returned result .
+2019-08-13 21:02:34.290 +01:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2019-08-13 21:02:34.290 +01:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2019-08-13 21:02:34.377 +01:00 [INF] Executed page /Index in 117.74390000000001ms
+2019-08-13 21:02:34.386 +01:00 [INF] Request finished in 663.4028ms 200 text/html; charset=utf-8
+2019-08-13 21:03:06.449 +01:00 [INF] User profile is available. Using 'C:\Users\aafamuef\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2019-08-13 21:03:06.991 +01:00 [INF] Entity Framework Core 2.2.6-servicing-10079 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=Data 
+2019-08-13 21:03:07.485 +01:00 [INF] Executed DbCommand (36ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetRoles] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2019-08-13 21:03:07.531 +01:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2019-08-13 21:04:13.136 +01:00 [INF] User profile is available. Using 'C:\Users\aafamuef\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2019-08-13 21:04:13.822 +01:00 [INF] Entity Framework Core 2.2.6-servicing-10079 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=Data 
+2019-08-13 21:04:14.488 +01:00 [INF] Executed DbCommand (38ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetRoles] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2019-08-13 21:04:14.544 +01:00 [INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2019-08-13 21:05:59.687 +01:00 [INF] Request starting HTTP/2.0 GET https://localhost:44392/  
+2019-08-13 21:05:59.868 +01:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2019-08-13 21:06:00.370 +01:00 [INF] Route matched with {page = "/Index", action = "", controller = "", area = ""}. Executing page /Index
+2019-08-13 21:06:00.396 +01:00 [INF] Executing handler method Api.Pages.IndexModel.OnGet - ModelState is "Valid"
+2019-08-13 21:06:00.397 +01:00 [INF] Executed handler method OnGet, returned result .
+2019-08-13 21:06:00.401 +01:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2019-08-13 21:06:00.402 +01:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2019-08-13 21:06:00.476 +01:00 [INF] Executed page /Index in 100.84710000000001ms
+2019-08-13 21:06:00.486 +01:00 [INF] Request finished in 802.8468ms 200 text/html; charset=utf-8
+2019-08-13 21:06:32.367 +01:00 [INF] User profile is available. Using 'C:\Users\aafamuef\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2019-08-13 21:06:32.956 +01:00 [INF] Entity Framework Core 2.2.6-servicing-10079 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=Data 
+2019-08-13 21:06:33.532 +01:00 [INF] Executed DbCommand (36ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetRoles] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2019-08-13 21:06:33.583 +01:00 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2019-08-13 21:10:58.975 +01:00 [INF] User profile is available. Using 'C:\Users\aafamuef\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2019-08-13 21:10:59.730 +01:00 [INF] Entity Framework Core 2.2.6-servicing-10079 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=Data 
+2019-08-13 21:11:00.440 +01:00 [INF] Executed DbCommand (69ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetRoles] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2019-08-13 21:11:00.504 +01:00 [INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2019-08-13 21:11:55.263 +01:00 [INF] User profile is available. Using 'C:\Users\aafamuef\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2019-08-13 21:11:55.991 +01:00 [INF] Entity Framework Core 2.2.6-servicing-10079 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=Data 
+2019-08-13 21:11:56.640 +01:00 [INF] Executed DbCommand (48ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetRoles] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2019-08-13 21:11:56.713 +01:00 [INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2019-08-13 21:13:39.222 +01:00 [INF] User profile is available. Using 'C:\Users\aafamuef\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2019-08-13 21:13:45.515 +01:00 [INF] Entity Framework Core 2.2.6-servicing-10079 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=Data 
+2019-08-13 21:13:46.298 +01:00 [INF] Executed DbCommand (88ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetRoles] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2019-08-13 21:13:46.353 +01:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2019-08-13 21:15:12.494 +01:00 [INF] User profile is available. Using 'C:\Users\aafamuef\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2019-08-13 21:15:15.691 +01:00 [INF] Entity Framework Core 2.2.6-servicing-10079 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=Data 
+2019-08-13 21:15:16.269 +01:00 [INF] Executed DbCommand (40ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetRoles] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2019-08-13 21:15:16.331 +01:00 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2019-08-13 21:16:29.233 +01:00 [INF] User profile is available. Using 'C:\Users\aafamuef\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2019-08-13 21:16:29.760 +01:00 [INF] Entity Framework Core 2.2.6-servicing-10079 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=Data 
+2019-08-13 21:16:30.299 +01:00 [INF] Executed DbCommand (37ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetRoles] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2019-08-13 21:16:30.354 +01:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2019-08-13 21:19:00.426 +01:00 [INF] User profile is available. Using 'C:\Users\aafamuef\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2019-08-13 21:19:00.951 +01:00 [INF] Entity Framework Core 2.2.6-servicing-10079 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=Data 
+2019-08-13 21:19:01.514 +01:00 [INF] Executed DbCommand (56ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetRoles] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2019-08-13 21:19:01.561 +01:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2019-08-13 21:19:53.485 +01:00 [INF] User profile is available. Using 'C:\Users\aafamuef\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2019-08-13 21:19:54.026 +01:00 [INF] Entity Framework Core 2.2.6-servicing-10079 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=Data 
+2019-08-13 21:19:54.527 +01:00 [INF] Executed DbCommand (40ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetRoles] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2019-08-13 21:19:54.569 +01:00 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2019-08-13 21:20:33.988 +01:00 [INF] User profile is available. Using 'C:\Users\aafamuef\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2019-08-13 21:20:34.677 +01:00 [INF] Entity Framework Core 2.2.6-servicing-10079 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=Data 
+2019-08-13 21:20:35.323 +01:00 [INF] Executed DbCommand (71ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetRoles] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2019-08-13 21:20:35.370 +01:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2019-08-13 21:21:35.356 +01:00 [INF] User profile is available. Using 'C:\Users\aafamuef\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2019-08-13 21:21:35.982 +01:00 [INF] Entity Framework Core 2.2.6-servicing-10079 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=Data 
+2019-08-13 21:21:36.569 +01:00 [INF] Executed DbCommand (41ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetRoles] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2019-08-13 21:21:36.631 +01:00 [INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2019-08-13 21:22:41.336 +01:00 [INF] User profile is available. Using 'C:\Users\aafamuef\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2019-08-13 21:22:41.972 +01:00 [INF] Entity Framework Core 2.2.6-servicing-10079 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=Data 
+2019-08-13 21:22:42.547 +01:00 [INF] Executed DbCommand (43ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetRoles] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2019-08-13 21:22:42.610 +01:00 [INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END

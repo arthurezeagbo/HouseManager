@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Service.DTO_s;
 using Service.Interface;
+using System.Threading.Tasks;
 
 namespace Api.Controllers
 {
@@ -15,9 +16,9 @@ namespace Api.Controllers
         }
 
         [HttpGet("GetAll")]
-        public JsonResult GetAll()
+        public async Task<JsonResult> GetAllAsync()
         {
-            return Json(_helper.GetAllAsync());
+            return Json(await _helper.GetAllAsync());
         }
 
         [HttpGet("GetById/{id}")]
